@@ -14,8 +14,12 @@ public enum PlayerStats
 
 public class PlayerSkillManager : MonoBehaviour
 {
-    private int kitchenMan,explorer,shelter,doctor,collector = 1;
-    private int skillPoint;
+
+    public SkillTree kitchenManSkillTree;
+    public SkillTree explorerSkillTree;
+    public SkillTree shelterSkillTree;
+    public SkillTree doctorSkillTree;
+    public SkillTree collectorSkillTree;
     // Start is called before the first frame update
     void Start()
     {

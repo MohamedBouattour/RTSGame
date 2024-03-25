@@ -34,6 +34,7 @@ public class Timer : MonoBehaviour
 
     // Displaying time in the format: 00Days 00Hours 00Minutes
     timerText.text = string.Format("{0:00}Days {1:00}Hours {2:00}Minutes", days, hours, minutes);
+    Player.elapsedTime = minutes + (hours*60) +(days*24);
     }
 
 }
