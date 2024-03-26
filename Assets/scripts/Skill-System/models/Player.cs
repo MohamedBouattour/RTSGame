@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public string name;
+    public string playerName;
     public static float elapsedTime;
     public int KitchenMan=1;
     public int Explorer=1;

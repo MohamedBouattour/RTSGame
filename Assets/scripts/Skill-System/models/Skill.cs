@@ -7,13 +7,15 @@ public class Skill
     public string description;
     public int cost;
     public string[] dependencies;
+    public Sprite icon;
 
-    public Skill(string name, string description, int cost, string[] dependencies)
+    public Skill(string name, string description, int cost, string[] dependencies,Sprite icon)
     {
         this.name = name;
         this.description = description;
         this.cost = cost;
         this.dependencies = dependencies;
+        this.icon = icon;
     }
 }
 
@@ -24,17 +26,19 @@ public class SkillTree
     public int skillPoints;
     public Skill[] skills;
     public string[] dependencies;
+    public Sprite image;
 
-    public SkillTree(string name)
+    public SkillTree(string name, Sprite image)
     {
         this.name = name;
         skillPoints = 0;
         skills = new Skill[0];
+        this.image = image;
     }
 
-    public void AddSkill(string name, string description, int cost, string[] dependencies)
+    public void AddSkill(string name, string description, int cost, string[] dependencies, Sprite image)
     {
-        Skill newSkill = new Skill(name, description, cost, dependencies);
+        Skill newSkill = new Skill(name, description, cost, dependencies,image);
         Skill[] newArray = new Skill[skills.Length + 1];
         for (int i = 0; i < skills.Length; i++)
         {
