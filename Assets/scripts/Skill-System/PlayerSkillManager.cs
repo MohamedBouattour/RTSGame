@@ -49,10 +49,13 @@ public class PlayerSkillManager : MonoBehaviour
         foreach (Skill skill in kitchenManSkillTree.skills)
         {
             GameObject skillObject = Instantiate(skillPrefab, this.transform);
+            skillObject.SetActive(true);
             Image skillImage = skillObject.GetComponentInChildren<Image>();
-            if (skillImage != null)
+            Sprite icon = Resources.Load<Sprite>("Sprites/kitchenman");
+            Debug.Log(icon);
+            if (skillImage != null && icon != null)
             {
-                skillImage.sprite = skill.icon;
+                skillImage.sprite = icon;
             }
         }
     }
