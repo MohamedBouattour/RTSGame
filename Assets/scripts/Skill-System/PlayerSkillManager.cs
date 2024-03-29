@@ -22,6 +22,7 @@ public class PlayerSkillManager : MonoBehaviour
 
     public GameObject skillPrefab;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +49,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         foreach (Skill skill in kitchenManSkillTree.skills)
         {
-            GameObject skillObject = Instantiate(skillPrefab, this.transform);
+            GameObject skillObject = Instantiate(skillPrefab, transform);
             skillObject.SetActive(true);
             Image skillImage = skillObject.GetComponentInChildren<Image>();
             Sprite icon = Resources.Load<Sprite>("Sprites/kitchenman");
@@ -62,10 +63,10 @@ public class PlayerSkillManager : MonoBehaviour
 
     private void initKitchenManSkillTree()
     {
-        kitchenManSkillTree.AddSkill("Culinary Mastery", "Unlocks the ability to create powerful dishes that provide temporary buffs to allies.", 1, new string[0], Resources.Load<Sprite>("./assets/images/KitchenMan.jpeg"));
-        /* kitchenManSkillTree.AddSkill("Ingredient Alchemy", "Learn to manipulate ingredients to create potions with various effects.", 2, new string[] { "Culinary Mastery" });
-        kitchenManSkillTree.AddSkill("Kitchen Tools Proficiency", "Master the use of kitchen tools as weapons in combat.", 1, new string[0]);
-        kitchenManSkillTree.AddSkill("Gourmet Empowerment", "Gain temporary buffs after consuming dishes you prepared.", 2, new string[] { "Culinary Mastery" }); */
+        kitchenManSkillTree.AddSkill("Culinary Mastery", "Unlocks the ability to create powerful dishes that provide temporary buffs to allies.", 1, new string[0], Resources.Load<Sprite>("Sprites/kitchenman"));
+        kitchenManSkillTree.AddSkill("Ingredient Alchemy", "Learn to manipulate ingredients to create potions with various effects.", 2, new string[] { "Culinary Mastery" }, Resources.Load<Sprite>("Sprites/kitchenman"));
+        kitchenManSkillTree.AddSkill("Kitchen Tools Proficiency", "Master the use of kitchen tools as weapons in combat.", 1, new string[0], Resources.Load<Sprite>("Sprites/kitchenman"));
+        kitchenManSkillTree.AddSkill("Gourmet Empowerment", "Gain temporary buffs after consuming dishes you prepared.", 2, new string[] { "Culinary Mastery" }, Resources.Load<Sprite>("Sprites/kitchenman"));
     }
 
     private void iniExplorerSkillTree()
