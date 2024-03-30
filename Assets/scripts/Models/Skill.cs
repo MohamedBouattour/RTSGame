@@ -9,13 +9,16 @@ public class Skill
     public string[] dependencies;
     public Sprite icon;
 
-    public Skill(string name, string description, int cost, string[] dependencies,Sprite icon)
+    public bool isUnlocked;
+
+    public Skill(string name, string description, int cost, string[] dependencies, Sprite icon, bool isUnlocked = false)
     {
         this.name = name;
         this.description = description;
         this.cost = cost;
         this.dependencies = dependencies;
         this.icon = icon;
+        this.isUnlocked = isUnlocked;
     }
 }
 
@@ -23,7 +26,7 @@ public class Skill
 public class SkillTree
 {
     public string name;
-    public int skillPoints;
+    public int classPoints;
     public Skill[] skills;
     public string[] dependencies;
     public Sprite image;
@@ -31,14 +34,14 @@ public class SkillTree
     public SkillTree(string name, Sprite image)
     {
         this.name = name;
-        skillPoints = 0;
+        classPoints = 0;
         skills = new Skill[0];
         this.image = image;
     }
 
     public void AddSkill(string name, string description, int cost, string[] dependencies, Sprite image)
     {
-        Skill newSkill = new Skill(name, description, cost, dependencies,image);
+        Skill newSkill = new Skill(name, description, cost, dependencies, image);
         Skill[] newArray = new Skill[skills.Length + 1];
         for (int i = 0; i < skills.Length; i++)
         {
@@ -48,8 +51,8 @@ public class SkillTree
         skills = newArray;
     }
 
-    public void GainSkillPoints(int amount)
+    public void GainclassPoints(int amount)
     {
-        skillPoints += amount;
+        classPoints += amount;
     }
 }
